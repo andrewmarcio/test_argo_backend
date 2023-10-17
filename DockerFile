@@ -1,0 +1,9 @@
+FROM wyveo/nginx-php-fpm:php81
+EXPOSE 81
+RUN mkdir -p /var/log/nginx/
+RUN mkdir -p /var/www/
+RUN mkdir -p /var/www/todo_api
+RUN chmod -R 777 /var/www/
+RUN chmod -R 777 /var/www/todo_api
+RUN chmod -R 777 /var/log/nginx/
+COPY ./Docker/nginx/default.conf /etc/nginx/conf.d/

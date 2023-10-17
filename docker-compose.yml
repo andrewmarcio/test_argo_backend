@@ -1,0 +1,32 @@
+version: "3.9"
+
+networks:
+    laravel:
+        name: laravel
+
+services:
+  dev:
+    build:
+        context: .
+        dockerfile: DockerFile
+    container_name: todo_api
+    image: todo_api:1.0.0
+    ports:
+        - 81:80
+    volumes:
+        - .:/var/www/todo_api/
+    networks:
+        - laravel
+      
+  mysql:
+    image: mysql:8.0.27
+    container_name: mysql
+    ports:
+        - 3308:3306
+    environment:
+        MYSQL_DATABASE: todoApi
+        MYSQL_USER: laravel
+        MYSQL_PASSWORD: secret
+        MYSQL_ROOT_PASSWORD: secret
+    networks:
+        - laravel
