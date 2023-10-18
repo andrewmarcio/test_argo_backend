@@ -1,6 +1,6 @@
 <?php
 
-namespace Domain\Enum;
+namespace Entities\Domain\Enum;
 
 enum Status: string
 {
@@ -8,7 +8,8 @@ enum Status: string
     case CANCELLED = "cancelled";
     case COMPLETED = "completed";
 
-    public static function getValues(): array {
+    public static function getValues(): array
+    {
         return array_column(self::cases(), 'value');
     }
 }
