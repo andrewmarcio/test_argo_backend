@@ -2,8 +2,8 @@
 
 namespace Repository\Task;
 
-use Entities\Domain\Task\Task;
-use Entities\Repository\Task\TaskRepositoryInterface;
+use Entities\Task\Task;
+use Entities\Task\Repository\TaskRepositoryInterface;
 use Repository\BaseRepository;
 
 class TaskRepository extends BaseRepository implements TaskRepositoryInterface

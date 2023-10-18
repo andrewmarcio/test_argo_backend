@@ -2,8 +2,8 @@
 
 namespace Database\Factories;
 
-use Entities\Domain\Enum\Status;
-use Entities\Domain\Task\Task;
+use Entities\Enum\Status;
+use Entities\Task\Task;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**

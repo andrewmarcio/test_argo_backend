@@ -1,6 +1,6 @@
 <?php
 
-namespace Entities\Repository\Task;
+namespace Entities\Task\Repository;
 
 use Entities\Repository\BaseRepositoryInterface;
 

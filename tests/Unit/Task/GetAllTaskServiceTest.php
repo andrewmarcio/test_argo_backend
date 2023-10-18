@@ -2,7 +2,7 @@
 
 namespace Tests\Unit\Task;
 
-use Entities\Domain\Task\Task;
+use Entities\Task\Task;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Repository\Task\TaskRepository;
 use Tests\TestCase;

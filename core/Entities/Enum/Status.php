@@ -1,6 +1,6 @@
 <?php
 
-namespace Entities\Domain\Enum;
+namespace Entities\Enum;
 
 enum Status: string
 {

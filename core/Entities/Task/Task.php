@@ -1,6 +1,6 @@
 <?php
 
-namespace Entities\Domain\Task;
+namespace Entities\Task;
 
 use Database\Factories\TaskFactory;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
