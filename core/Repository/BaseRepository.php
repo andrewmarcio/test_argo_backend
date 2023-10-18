@@ -9,8 +9,7 @@ use Illuminate\Support\Facades\DB;
 
 class BaseRepository implements BaseRepositoryInterface
 {
-
-    protected Model $model;
+    protected string $model;
 
     public function all(): Collection
     {

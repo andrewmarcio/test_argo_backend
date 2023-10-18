@@ -1,6 +1,6 @@
 <?php
 
-namespace UserCases\Task;
+namespace UseCases\Task;
 
 use Entities\Repository\Task\TaskRepositoryInterface;
 

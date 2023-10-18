@@ -5,7 +5,7 @@ namespace UseCases\Task;
 use Entities\Services\Task\GetAllTasksServiceInterface;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Presentation\Resources\TaskResource;
-use UserCases\Task\BaseTaskService;
+use UseCases\Task\BaseTaskService;
 
 class GetAllTasksService extends BaseTaskService implements GetAllTasksServiceInterface
 {
