@@ -1,0 +1,19 @@
+name: Laravel Deploy
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs: 
+  laravel-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Connect with to deploy application 
+        uses: appleboy/ssh-action@master
+        with: 
+          username: root
+          host: ${{ secrets.HOST }}
+          key: ${{ secrets.SSH_KEY }}
+          script: 'cd /var/www/todo_list && sh deploy.sh'
