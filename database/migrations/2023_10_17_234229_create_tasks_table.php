@@ -1,6 +1,6 @@
 <?php
 
-use Domain\Status\Status;
+use Domain\Enum\Status;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
