@@ -16,7 +16,7 @@ return new class extends Migration
             $table->uuid("id")->primary()->unique();
             $table->string("title");
             $table->text("description");
-            $table->enum("status", Status::getValues());
+            $table->enum("status", Status::getValues())->default(Status::PENDING);
             $table->timestamps();
             $table->softDeletes();
         });

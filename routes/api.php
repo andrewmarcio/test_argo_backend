@@ -15,6 +15,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::prefix("tasks")->group(function() {
-    Route::resource("/", TaskController::class);
+Route::prefix('/')->group(function() {
+    Route::get('/tasks/status/{status}', [TaskController::class, "getByStatus"]);
+    Route::put('/tasks/{status}/finished', [TaskController::class, "finishedTask"]);
+    Route::apiResource("/tasks", TaskController::class);
 });

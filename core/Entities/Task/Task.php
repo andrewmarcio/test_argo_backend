@@ -3,6 +3,7 @@
 namespace Entities\Task;
 
 use Database\Factories\TaskFactory;
+use Entities\Enum\Status;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -17,6 +18,10 @@ class Task extends Model
 
     public $fillable = [
         'title', 'description', 'status'
+    ];
+
+    public $casts = [
+        "status" => Status::class
     ];
 
     public static function newFactory()

@@ -72,7 +72,7 @@ class BaseRepository implements BaseRepositoryInterface
         }
     }
 
-    private function resolvedModel(): Model
+    protected function resolvedModel(): Model
     {
         return app($this->model);
     }
