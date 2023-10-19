@@ -10,10 +10,10 @@ git pull origin main
 # docker compose up -d
 
 echo "Install composer packages"
-docker run -it todo_api:1.0.0 /bin/sh -c cd /var/www/todo_api && composer install -y
+docker run -it todo_api:1.0.0 /bin/sh -c cd /var/www/todo_api && composer install
 
 echo "Execute migrate database"
-docker run -it todo_api:1.0.0 /bin/sh -c cd /var/www/todo_api && php artisan migrate -y
+docker run -it todo_api:1.0.0 /bin/sh -c cd /var/www/todo_api && php artisan migrate
 
 echo "Execute migrate database"
-docker run -it todo_api:1.0.0 /bin/sh -c cd /var/www/todo_api && php artisan optimize:clear -y
+docker run -it todo_api:1.0.0 /bin/sh -c cd /var/www/todo_api && php artisan optimize:clear
