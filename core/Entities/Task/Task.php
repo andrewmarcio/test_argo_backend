@@ -15,7 +15,12 @@ class Task extends Model
     protected $keyType = 'string';
     public $incrementing = false;
 
-    public static function newFactory() {
-     return new TaskFactory();
+    public $fillable = [
+        'title', 'description', 'status'
+    ];
+
+    public static function newFactory()
+    {
+        return new TaskFactory();
     }
 }

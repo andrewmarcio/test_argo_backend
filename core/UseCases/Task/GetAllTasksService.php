@@ -11,6 +11,6 @@ class GetAllTasksService extends BaseTaskService implements GetAllTasksServiceIn
 {
     public function handle(): JsonResource
     {
-        return new TaskResource($this->repository->all());
+        return TaskResource::collection($this->repository->all());
     }
 }
