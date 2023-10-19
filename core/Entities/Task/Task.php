@@ -1,8 +1,9 @@
 <?php
 
-namespace Entities\Domain\Task;
+namespace Entities\Task;
 
 use Database\Factories\TaskFactory;
+use Entities\Enum\Status;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -15,7 +16,16 @@ class Task extends Model
     protected $keyType = 'string';
     public $incrementing = false;
 
-    public static function newFactory() {
-     return new TaskFactory();
+    public $fillable = [
+        'title', 'description', 'status'
+    ];
+
+    public $casts = [
+        "status" => Status::class
+    ];
+
+    public static function newFactory()
+    {
+        return new TaskFactory();
     }
 }

@@ -1,12 +1,12 @@
 <?php
 
-namespace Entities\Domain\Enum;
+namespace Entities\Enum;
 
 enum Status: string
 {
-    case PENDING = "pending";
-    case CANCELLED = "cancelled";
     case COMPLETED = "completed";
+    case DELETED = "deleted";
+    case PENDING = "pending";
 
     public static function getValues(): array
     {

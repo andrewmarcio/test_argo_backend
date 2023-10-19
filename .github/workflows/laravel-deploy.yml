@@ -17,4 +17,4 @@ jobs:
           host: '137.184.15.127'
           key: ${{ secrets.SSH_KEY }}
           port: 22
-          script: 'echo "Connected"'
+          script: 'cd /var/www/todo_api && sh ./deploy.sh'

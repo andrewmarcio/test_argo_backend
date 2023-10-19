@@ -2,8 +2,8 @@
 
 namespace Database\Factories;
 
-use Entities\Domain\Enum\Status;
-use Entities\Domain\Task\Task;
+use Entities\Enum\Status;
+use Entities\Task\Task;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -22,9 +22,9 @@ class TaskFactory extends Factory
     public function definition(): array
     {
         return [
-            "title" => $this->faker->title(),
+            "title" => $this->faker->text(50),
             "description" => $this->faker->text(),
-            "status" => Status::PENDING,
+            "status" => (random_int(1, 10) % 2) ? Status::PENDING : Status::COMPLETED,
         ];
     }
 }

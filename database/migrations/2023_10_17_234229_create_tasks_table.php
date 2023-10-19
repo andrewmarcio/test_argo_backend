@@ -1,6 +1,6 @@
 <?php
 
-use Entities\Domain\Enum\Status;
+use Entities\Enum\Status;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -16,7 +16,7 @@ return new class extends Migration
             $table->uuid("id")->primary()->unique();
             $table->string("title");
             $table->text("description");
-            $table->enum("status", Status::getValues());
+            $table->enum("status", Status::getValues())->default(Status::PENDING);
             $table->timestamps();
             $table->softDeletes();
         });

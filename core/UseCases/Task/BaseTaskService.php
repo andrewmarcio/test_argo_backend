@@ -2,7 +2,7 @@
 
 namespace UseCases\Task;
 
-use Entities\Repository\Task\TaskRepositoryInterface;
+use Entities\Task\Repository\TaskRepositoryInterface;
 
 class BaseTaskService
 {

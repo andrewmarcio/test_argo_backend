@@ -2,7 +2,7 @@
 
 namespace UseCases\Task;
 
-use Entities\Services\Task\GetAllTasksServiceInterface;
+use Entities\Task\Services\GetAllTasksServiceInterface;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Presentation\Resources\TaskResource;
 use UseCases\Task\BaseTaskService;
@@ -11,6 +11,6 @@ class GetAllTasksService extends BaseTaskService implements GetAllTasksServiceIn
 {
     public function handle(): JsonResource
     {
-        return new TaskResource($this->repository->all());
+        return TaskResource::collection($this->repository->all());
     }
 }
