@@ -6,7 +6,8 @@ RUN mkdir -p /var/www/todo_api
 RUN chmod -R 777 /var/www/
 RUN chmod -R 777 /var/www/todo_api
 RUN chmod -R 777 /var/log/nginx/
-
-RUN sudo apt install -y php-sqlite3
+RUN sudo apt -y update
+RUN sudo apt -y upgrade
+RUN sudo apt install -y php-sqlite3 sqlite3 libsqlite3-dev
 
 COPY ./Docker/nginx/default.conf /etc/nginx/conf.d/
