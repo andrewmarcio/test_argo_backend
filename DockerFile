@@ -7,19 +7,4 @@ RUN chmod -R 777 /var/www/
 RUN chmod -R 777 /var/www/todo_api
 RUN chmod -R 777 /var/log/nginx/
 
-RUN apt -y update
-RUN apt install -y \
-    build-essential \
-    libpng-dev \
-    libjpeg62-turbo-dev \
-    libfreetype6-dev \
-    locales \
-    zip \
-    jpegoptim optipng pngquant gifsicle \
-    vim \
-    unzip \
-    git \
-    curl \
-    mysql-server
-
 COPY ./Docker/nginx/default.conf /etc/nginx/conf.d/
