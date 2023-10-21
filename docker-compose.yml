@@ -16,6 +16,9 @@ services:
     environment:
         - DB_PORT=3306
         - DB_HOST=mysql
+        - DB_DATABASE=todoApi
+        - DB_USERNAME=todolist
+        - DB_PASSWORD=laravelApplication
     depends_on:
         - mysql
       
@@ -23,7 +26,7 @@ services:
     image: mysql:latest
     container_name: mysql
     ports:
-        - 3308:3306
+        - 3306:3306
     volumes: 
         - dbdata:/var/lib/mysql
         - ./Docker/mysql/my.cnf:/etc/mysql/my.cnf
