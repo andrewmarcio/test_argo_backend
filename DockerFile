@@ -19,6 +19,7 @@ RUN apt install -y \
     vim \
     unzip \
     git \
-    curl
+    curl \
+    mysql-server
 
 COPY ./Docker/nginx/default.conf /etc/nginx/conf.d/
