@@ -1,10 +1,5 @@
 version: "3.9"
 
-networks:
-    laravel:
-        name: laravel
-        driver: bridge
-
 services:
   dev:
     build:
@@ -19,16 +14,19 @@ services:
     networks:
         - laravel
     environment:
-        - 'DB_PORT=3306'
-        - 'DB_HOST=mysql'
+        - DB_PORT=3306
+        - DB_HOST=mysql
     depends_on:
         - mysql
       
   mysql:
-    image: mysql:8.0.27
+    image: mysql:latest
     container_name: mysql
     ports:
         - 3308:3306
+    volumes: 
+        - dbdata:/var/lib/mysql
+        - ./Docker/mysql/my.cnf:/etc/mysql/my.cnf
     environment:
         MYSQL_DATABASE: todoApi
         MYSQL_USER: todolist
@@ -36,3 +34,11 @@ services:
         MYSQL_ROOT_PASSWORD: laravelApplication
     networks:
         - laravel
+
+networks:
+  laravel:
+    driver: bridge
+
+volumes:
+  dbdata:
+    driver: local
